@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Papan Keberadaan — DEBU-BERSATU-23</title>
+  <style>
+    :root {
+      --bg: #f9f7f4;
+      --text: #333;
+      --accent: #8a7d6f;
+      --green: #a8d5a2;
+      --rain: #c0c8d6;
+      --coffee: #b8866b;
+      --empty: #e0e0e0;
+    }
+
+    body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background-color: var(--bg);
+      color: var(--text);
+      max-width: 600px;
+      margin: 0 auto;
+      padding: 2rem;
+      line-height: 1.6;
+    }
+
+    header {
+      text-align: center;
+      margin-bottom: 2rem;
+      border-bottom: 1px solid var(--empty);
+      padding-bottom: 1.5rem;
+    }
+
+    h1 {
+      font-weight: 300;
+      font-size: 1.8rem;
+      color: var(--accent);
+      letter-spacing: -0.5px;
+    }
+
+    .code {
+      font-family: monospace;
+      background: #eee;
+      padding: 0.4rem 0.8rem;
+      border-radius: 4px;
+      font-size: 1.1rem;
+      display: inline-block;
+      margin-top: 0.5rem;
+    }
+
+    .section {
+      margin: 2rem 0;
+      padding: 1.5rem;
+      background: white;
+      border-radius: 12px;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.03);
+    }
+
+    h2 {
+      font-weight: 400;
+      color: var(--accent);
+      border-left: 4px solid var(--accent);
+      padding-left: 1rem;
+      margin-bottom: 1rem;
+    }
+
+    .presence-list {
+      list-style: none;
+      padding: 0;
+    }
+
+    .presence-list li {
+      padding: 0.8rem 0;
+      border-bottom: 1px dashed var(--empty);
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+    }
+
+    .presence-list li:last-child {
+      border-bottom: none;
+    }
+
+    .symbol {
+      font-size: 1.8rem;
+      line-height: 1;
+    }
+
+    .name {
+      font-weight: 500;
+    }
+
+    .time {
+      color: var(--accent);
+      font-size: 0.9rem;
+      margin-left: auto;
+    }
+
+    .empty {
+      color: var(--empty);
+      font-style: italic;
+    }
+
+    .action-btn {
+      display: block;
+      width: 100%;
+      padding: 1.5rem;
+      margin-top: 2rem;
+      background: var(--green);
+      border: none;
+      border-radius: 12px;
+      font-size: 1.3rem;
+      font-weight: 500;
+      color: white;
+      cursor: pointer;
+      transition: background 0.3s;
+      box-shadow: 0 4px 12px rgba(168, 213, 162, 0.2);
+    }
+
+    .action-btn:hover {
+      background: #96c991;
+    }
+
+    .footer {
+      text-align: center;
+      margin-top: 3rem;
+      font-size: 0.9rem;
+      color: var(--accent);
+    }
+
+    .note {
+      font-size: 0.9rem;
+      color: var(--accent);
+      margin-top: 0.5rem;
+      font-style: italic;
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <h1>Papan Keberadaan</h1>
+    <div class="code">DEBU-BERSATU-23</div>
+    <p class="note">Hanya untuk yang sudah tahu cara masuk. Tidak ada yang dipantau. Hanya yang mau, yang berbicara.</p>
+  </header>
+
+  <div class="section">
+    <h2>Yang Sudah "Beri Tanda" Minggu Ini</h2>
+    <ul class="presence-list">
+      <li>
+        <span class="symbol">🟢</span>
+        <span class="name">Andre</span>
+        <span class="time">3 hari lalu</span>
+      </li>
+      <li>
+        <span class="symbol">🌧️</span>
+        <span class="name">Sari</span>
+        <span class="time">2 hari lalu</span>
+      </li>
+      <li>
+        <span class="symbol">☕</span>
+        <span class="name">Budi</span>
+        <span class="time">1 jam lalu</span>
+      </li>
+    </ul>
+  </div>
+
+  <div class="section">
+    <h2>Yang Belum "Beri Tanda"</h2>
+    <ul class="presence-list">
+      <li><span class="name">Rina</span></li>
+      <li><span class="name">Fajar</span></li>
+    </ul>
+    <p class="note">Tidak ada yang harus menjelaskan. Hanya ada ruang untuk diam — dan untuk kembali, jika mau.</p>
+  </div>
+
+  <button class="action-btn">BERI TANDA KEHADIRANKU HARI INI ☕</button>
+
+  <div class="footer">
+    <p>Ini bukan aplikasi pelacak.<br>
+    Ini adalah tempat kecil di dunia digital —<br>
+    tempat kita saling berkata: <em>"Aku masih di sini."</em></p>
+    <p>© 2025 Papan Keberadaan — Dibuat untuk yang lelah, yang diam, yang masih ingin bertahan.</p>
+  </div>
+
+  <script>
+document.querySelector('.action-btn').addEventListener('click', function() {
+  const nama = prompt('Siapa namamu? (Contoh: Rina, Fajar, dll)', '');
+  
+  if (!nama || nama.trim() === '') {
+    alert('Kamu bisa kembali kapan pun. Tidak perlu nama jika tidak mau.');
+    return;
+  }
+
+  if (confirm('Kamu yakin ingin memberi tanda kehadiranmu hari ini?\n\nIni bukan laporan. Ini hanya bisikan kecil.\n\nKamu bisa menghapusnya kapan saja.')) {
+    // Tambahkan ke daftar yang sudah beri tanda
+    const presenceList = document.querySelector('.presence-list:nth-of-type(1)');
+    const newLi = document.createElement('li');
+    newLi.innerHTML = `
+      <span class="symbol">☕</span>
+      <span class="name">${nama}</span>
+      <span class="time">baru saja</span>
+    `;
+    presenceList.prepend(newLi); // Tambah di paling atas
+
+    // Hapus dari daftar yang belum beri tanda (jika ada)
+    const absentList = document.querySelector('.presence-list:nth-of-type(2)');
+    const absentItems = absentList.querySelectorAll('.name');
+    absentItems.forEach(item => {
+      if (item.textContent === nama) {
+        item.parentElement.remove();
+      }
+    });
+
+    // Ubah tombol jadi konfirmasi
+    this.textContent = `Terima kasih, ${nama}. Kami tahu kamu ada. ☕`;
+    this.disabled = true;
+    this.style.opacity = '0.8';
+
+    alert(`Terima kasih, ${nama}. Kami tahu kamu ada.\n\nKamu bisa kembali kapan pun.`);
+  }
+});
+</script>
+
+</body>
+</html>
